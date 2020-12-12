@@ -1,0 +1,89 @@
+@import 'config';
+
+h1 {
+  margin: 50px 0 30px;
+  text-align: center;
+}
+
+.faq {
+  position: relative;
+  margin: 20px 0;
+  padding: 30px;
+  background: transparent;
+  border: 1px solid #9fa4f8;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  &-container {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  &-title {
+    margin-right: 35px;
+  }
+  &-text {
+    visibility: hidden;
+    opacity: 0;
+    font-size: 0;
+    transition: all 0.3s ease;
+  }
+  &-toggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    font-size: 1rem;
+    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
+    .fa-times {
+      display: none;
+    }
+  }
+  &.active {
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+    .faq-text {
+      margin-top: 30px;
+      visibility: visible;
+      opacity: 1;
+      font-size: 1rem;
+    }
+    .faq-toggle {
+      background: #9fa488;
+      .fa-times {
+        display: block;
+        color: #fff;
+      }
+      .fa-chevron-down {
+        display: none;
+      }
+    }
+    &::before,
+    &::after {
+      content: '\f075';
+      top: 20px;
+      left: 20px;
+      position: absolute;
+      font-family: 'Font Awesome 5 Free';
+      color: #2ecc71;
+      font-size: 7rem;
+      opacity: 0.2;
+      z-index: 0;
+    }
+    &::before {
+      top: -10px;
+      left: -30px;
+      color: #3498db;
+      transform: rotateY(180deg);
+    }
+  }
+}
