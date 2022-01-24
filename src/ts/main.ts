@@ -3,7 +3,7 @@ const faqContainer = document.getElementById('faq-container') as HTMLDivElement;
 const faqs = [
   {
     id: 1,
-    title: 'What is your favorite code editor?',
+    title: 'What is the code editor you prefer?',
     text: 'VScode',
   },
   {
